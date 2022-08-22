@@ -4,6 +4,7 @@ const Carousel = () => {
 
     return (
         <div className="carousel">
+            <h1 className="carousel__title">Chemical Elements</h1>
             <ul className="carousel__list">
                 <li className="carousel__item alkalimetal"  data-pos="-2"></li>
                 <li className="carousel__item alkalineearthmetal" data-pos="-1"></li>

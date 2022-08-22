@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.informations {
+    color: white;
+    width: 100%;
+    text-shadow: 0px 2px 8px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+    border-radius: 12px;
+    text-align: justify;
+    padding: 2em;
+    line-height: 1.5em;
+    font-size: 1em;
+    @media (min-width: 426px) {
+        font-size: 1.2em;
+        transition: 0.5s;
+        width: 420px;
+    }
+    @media (min-width: 1025px) {
+        width: 400px;
+    }
+
+    &__title {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+}

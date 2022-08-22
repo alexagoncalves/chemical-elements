@@ -1,11 +1,13 @@
 // == Import
-import './styles.css';
+import './app.scss';
 import Carousel from '../Carousel';
+import Informations from '../Informations';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Carousel/>
+      <Carousel/>
+      <Informations/>
   </div>
 );
 

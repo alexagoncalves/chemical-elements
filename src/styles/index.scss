@@ -5,3 +5,34 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
 }
+
+.actinoid {
+  background-image: vars.$actinoid;
+}
+.alkalineearthmetal {
+  background-image: vars.$alkalineearthmetal;
+}
+.alkalimetal {
+  background-image: vars.$alkalimetal;
+}
+.halogen {
+  background-image: vars.$halogen;
+}
+.lanthanoid {
+  background-image: vars.$lanthanoid;
+}
+.metal {
+  background-image: vars.$metal;
+}
+.metalloid {
+  background-image: vars.$metalloid;
+}
+.noblegas {
+  background-image: vars.$noblegas;
+}
+.nonmetal {
+  background-image: vars.$nonmetal;
+}
+.transitionmetal {
+  background-image: vars.$transitionmetal;
+}
