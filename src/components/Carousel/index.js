@@ -1,16 +1,22 @@
+import { useSelector } from 'react-redux';
 import './carousel.scss';
+import { getElementsToDisplay, slugify } from '../../functions/elements';
 
 const Carousel = () => {
 
-    return (
+    const elementsData = useSelector((state) => state.elements.data);
+    const orderToDisplay = useSelector((state) => state.elements.elementsDisplay);
+
+    const elementsInDisplay = getElementsToDisplay(orderToDisplay, elementsData);
+    
+     return (
         <div className="carousel">
             <h1 className="carousel__title">Chemical Elements</h1>
             <ul className="carousel__list">
-                <li className="carousel__item alkalimetal"  data-pos="-2"></li>
-                <li className="carousel__item alkalineearthmetal" data-pos="-1"></li>
-                <li className="carousel__item actinoid" data-pos="0" data-before='Hs' id="1"><span className="carousel__item-number">108</span></li>
-                <li className="carousel__item actinoid" data-pos="1"></li>
-                <li className="carousel__item actinoid" data-pos="2"></li>
+                {elementsInDisplay.map((element, index) => (
+                    <li className={`carousel__item ${slugify(element.groupBlock)}`} data-pos={index} data-before={element.symbol} key={index}><span className="carousel__item-number">{element.atomicNumber}</span></li>
+                )) 
+                }
             </ul>
         </div>
     )

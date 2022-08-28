@@ -9,11 +9,11 @@ body {
 .actinoid {
   background-image: vars.$actinoid;
 }
-.alkalineearthmetal {
-  background-image: vars.$alkalineearthmetal;
+.alkaline-earth-metal {
+  background-image: vars.$alkalineEarthMetal;
 }
-.alkalimetal {
-  background-image: vars.$alkalimetal;
+.alkali-metal {
+  background-image: vars.$alkaliMetal;
 }
 .halogen {
   background-image: vars.$halogen;
@@ -27,12 +27,15 @@ body {
 .metalloid {
   background-image: vars.$metalloid;
 }
-.noblegas {
-  background-image: vars.$noblegas;
+.noble-gas {
+  background-image: vars.$nobleGas;
 }
 .nonmetal {
-  background-image: vars.$nonmetal;
+  background-image: vars.$nonMetal;
 }
-.transitionmetal {
-  background-image: vars.$transitionmetal;
+.transition-metal {
+  background-image: vars.$transitionMetal;
+}
+.post-transition-metal {
+  background-image: vars.$postTransitionMetal;
 }
