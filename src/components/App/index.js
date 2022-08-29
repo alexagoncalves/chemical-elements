@@ -18,9 +18,9 @@ const App = () => {
 
   const scrollDirection = (e) => {
     if (e.nativeEvent.wheelDelta > 0) {
-      dispatch(getCurrentElementsInDisplay(scrollUp(elementsDisplay)))
-    } else {
       dispatch(getCurrentElementsInDisplay(scrollDown(elementsDisplay)))
+    } else {
+      dispatch(getCurrentElementsInDisplay(scrollUp(elementsDisplay)))
     }
   }
 
