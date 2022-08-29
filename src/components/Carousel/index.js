@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import './carousel.scss';
-import { getElementsToDisplay, slugify } from '../../functions/elements';
+import { getElementsToDisplay, slugify, sc } from '../../functions/elements';
 
 const Carousel = () => {
 
@@ -8,6 +8,8 @@ const Carousel = () => {
     const orderToDisplay = useSelector((state) => state.elements.elementsDisplay);
 
     const elementsInDisplay = getElementsToDisplay(orderToDisplay, elementsData);
+
+
     
      return (
         <div className="carousel">

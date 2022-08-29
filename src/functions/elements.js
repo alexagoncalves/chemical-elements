@@ -16,3 +16,31 @@ export const slugify = (text) => {
       .replace(/[^\w\-]+/g, '')     // Remove all non-word chars
       .replace(/\-\-+/g, '-');        // Replace multiple - with single -
 }
+
+export const scrollUp = (elementsDisplay) => {
+    
+    let newArrayElements = [];
+    for (let element of elementsDisplay) {
+        if (element === 118) {
+            element = 0
+        }
+        element++;
+        newArrayElements.push(element)
+    }
+    
+    return newArrayElements;
+}
+
+export const scrollDown = (elementsDisplay) => {
+    
+    let newArrayElements = [];
+    for (let element of elementsDisplay) {
+        if (element === 1) {
+            element = 119
+        }
+        element--;
+        newArrayElements.push(element)
+    }
+    
+    return newArrayElements;
+}

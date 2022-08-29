@@ -11,7 +11,7 @@ const Informations = () => {
 
     return (
             <div className={`informations ${slugify(element.groupBlock)}`}>
-                <h2 className="informations__title">Hydrogen</h2>
+                <h2 className="informations__title">{element.name}</h2>
                 <ul className="informations__list">
                     <li className="informations__item">Atomic Number: {element.atomicNumber}</li>
                     <li className="informations__item">Atomic Mass: {element.atomicMass}</li>

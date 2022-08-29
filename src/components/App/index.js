@@ -3,9 +3,10 @@ import './app.scss';
 import Carousel from '../Carousel';
 import Informations from '../Informations';
 
-import { getElementsFromApi } from '../../actions/elements';
+import { getCurrentElementsInDisplay, getElementsFromApi } from '../../actions/elements';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { scrollDown, scrollUp } from '../../functions/elements';
 
 
 // == Composant
@@ -13,13 +14,24 @@ const App = () => {
 
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.loader.loading);
+  const elementsDisplay = useSelector((state) => state.elements.elementsDisplay);
+
+  const scrollDirection = (e) => {
+    if (e.nativeEvent.wheelDelta > 0) {
+      dispatch(getCurrentElementsInDisplay(scrollUp(elementsDisplay)))
+    } else {
+      dispatch(getCurrentElementsInDisplay(scrollDown(elementsDisplay)))
+    }
+  }
 
   useEffect(() => {
     dispatch(getElementsFromApi());
   }, []);
 
   return (
-    <div className="app">
+    <div className="app" onWheel={(e) => {
+      scrollDirection(e)
+    }}>
       {!loading && (
         <>
         <Carousel/>
