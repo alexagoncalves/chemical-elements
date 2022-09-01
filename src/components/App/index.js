@@ -9,12 +9,22 @@ import { useEffect } from 'react';
 import { scrollDown, scrollUp } from '../../functions/elements';
 
 
+
 // == Composant
 const App = () => {
 
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.loader.loading);
   const elementsDisplay = useSelector((state) => state.elements.elementsDisplay);
+  const colorMode = useSelector((state) => state.app.darkMode);
+  
+  const getAppColorMode = () => {
+    if (colorMode === true) {
+      return 'dark-app'
+    } else {
+      return 'light-app'
+    }
+  }
 
   const scrollDirection = (e) => {
     if (e.nativeEvent.wheelDelta > 0) {
@@ -29,7 +39,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app" onWheel={(e) => {
+    <div className={`app ${getAppColorMode()}`} onWheel={(e) => {
       scrollDirection(e)
     }}>
       {!loading && (
